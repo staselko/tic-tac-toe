@@ -1,462 +1,51 @@
-@import "~pretty-checkbox/src/pretty-checkbox.scss";
 body {
   margin: 0px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background: #f2f2f2;
 }
-@mixin fontConjig {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.05px;
-  color: #66788a;
-}
-@mixin formsets {
-  width: 100%;
-  border-bottom: 1px solid $borderbottom;
-  padding-bottom: 1px;
-  padding-top: 33px;
-  box-sizing: border-boxg;
-  height: 253px;
-}
-@mixin title {
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 16px;
-  color: #66788a;
-  margin-left: 16px;
-}
-@mixin formName {
-  margin-left: 24px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -0.05px;
-  color: #3a3b3f;
-}
-@mixin input {
-  margin-left: 24px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 16px 88px 16px 16px;
-  width: 328px;
-  height: 56px;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.15px;
-  color: rgba(0, 0, 0, 0.6);
-}
-@mixin secondaryFont {
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.05px;
-  color: #9ea0a5;
-}
-
-$buttoncolor: #1665d8;
-$borderbottom: #e4e7eb;
-$headercolor: #3f51b5;
-$bcgclink: #33368f;
-$borders: 1px solid #e4e7eb;
-@mixin flexrow {
+@mixin center {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-@mixin flexcol {
-  display: flex;
-  flex-direction: column;
-}
-////////////////////////////////////////////////////////////////////
-.page-title {
-  height: 64px;
-  background-color: $headercolor;
-  width: 100%;
-  padding: 14px 34px 34px 24px;
-  box-sizing: border-box;
-  @include flexrow();
-  align-content: center;
-  justify-content: space-between;
-  @media (max-width: 1600px) {
-    width: 100%;
+.game-name {
+  height: 100px;
+  background-color: rgb(60, 205, 224);
+  &__name {
+    font-size: 37px;
+    letter-spacing: 1.5px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
   }
 }
-.logo-line {
-  @include flexrow();
-}
-.page-title__items {
-  .logotype {
-    width: 179px;
-    height: 36px;
-  }
-}
-.free-version {
-  @include flexrow();
-  height: 30px;
-  box-sizing: border-box;
-  background-color: $bcgclink;
-  @media (max-width: 1600px) {
-    display: none;
-  }
-
-  &__pic {
-    height: 19px;
-    width: 37px;
-    margin: 6px 5px 14px 6px;
-  }
-  margin: 3px 3px 0px 0px;
-  border-radius: 4px;
-}
-.reference {
-  font-size: 14px;
-  line-height: 16px;
-  &__title {
-    font-style: normal;
-    font-weight: normal;
-    color: #cdd1ea;
-  }
-  color: white;
-  margin: 7px 7px 0px 14px;
-}
-.exit-button {
-  &__img {
-    width: 56.94px;
-    height: 19.51px;
-    display: flex;
-    justify-content: flex-end;
-  }
-  margin-top: 6px;
+.game-name_set {
+  @include center();
 }
 main {
-  @include flexrow();
+  @include center();
+  height: 77.55%;
 }
-aside {
-  background-color: white;
-  width: 270px;
-  height: 1060px;
-  border-right: 1px solid rgba(63, 63, 68, 0.005);
-  box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15),
-    0px 1px 0px rgba(63, 63, 68, 0.05);
-  @media (max-width: 1600px) {
-    height: 1800px;
-  }
+.begin-button {
+  border-radius: 6px;
+  font-size: 25px;
+    box-shadow: 0 0 10px rgb(60, 205, 224);
+    border:none;
+    padding: 20px 50px;
+    color:rgb(255, 255, 255);
+    background-color: seagreen;
 }
-.profile-info {
-  margin: 0px 16px;
-  border-bottom: 1px solid $borderbottom;
-  padding-bottom: 23px;
-  @include flexcol();
-  justify-content: center;
-  align-items: center;
-  height: 203px;
-  &__pic {
-    width: 100px;
-  }
-  &__name {
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    letter-spacing: -0.05px;
-    margin-top: 16px;
-    margin-bottom: 4px;
-  }
-  &__post {
-    font-size: 12px;
-    line-height: 16px;
-    text-align: center;
-    color: #9ea0a5;
-  }
-}
-nav {
-  padding: 3px 0px 29px 32px;
-  @include flexcol();
-  @media (max-width: 1600px) {
-    padding-right: 29px;
-  }
-}
-.nav-item {
-  margin-top: 34px;
-  @include flexrow();
-  &__icon {
-    width: 20px;
-    height: 20px;
-  }
-  &__text {
-    @include fontConjig();
-    margin-left: 8px;
-  }
-}
-.support {
-  margin-right: 16px;
-  margin-left: 16px;
-  padding-top: 24px;
-  border-top: $borders;
-  &__title {
-    margin-left: 14px;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 15px;
-    color: rgba(0, 0, 0, 0.328974);
-    margin-bottom: 19px;
-  }
-  &__link {
-    margin-left: 15px;
-    @include flexrow();
-    @include fontConjig();
-    img {
-      width: 20px;
-      height: 20px;
-    }
-  }
-}
-.block-group {
-  @include flexcol();
-  width: 100%;
-}
-.nav-tools {
-  @include flexrow();
-  height: 57px;
+footer {
+  color:rgb(255, 255, 255);
+  height: 100px;
+  background-color: rgb(60, 205, 224);
+  padding: 45px 50px;
+  font-size: 15px;
+  letter-spacing: 2px;
   box-sizing: border-box;
-  padding-left: 40px;
-  padding-top: 19px;
-  margin-bottom: 18px;
-  &__item {
-    margin-right: 55px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: -0.05px;
-    color: #3a3b3f;
-  }
-  width: 100%;
-  border-bottom: 1px solid $borderbottom;
 }
-.center-content {
-  @include flexrow;
-  padding-left: 24px;
-  @media (max-width: 1600px) {
-    @include flexcol();
-    align-items: center;
-    padding-left: 0px;
-  }
-}
-.profile-block {
-  padding: 24px;
-  background: #ffffff;
-  border: 1px solid rgba(63, 63, 68, 0.005);
-  box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15);
-  border-radius: 4px;
-  width: 375px;
-  height: 249px;
-  box-sizing: border-box;
-  @include flexcol();
-  &__side {
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding-bottom: 24px;
-    @include flexrow();
-    border-bottom: 1px solid $borderbottom;
-    width: 100%;
-  }
-  &__img {
-    height: 140px;
-    width: 140px;
-  }
-  @media (max-width: 1600px) {
-    width: 85%;
-  }
-}
-.person-information {
-  &__name {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-    letter-spacing: -0.06px;
-    color: #212529;
-    margin-bottom: 10px;
-  }
-  &__location {
-    @include secondaryFont;
-  }
-  &__time {
-    @include secondaryFont;
-  }
-}
-.pic-setts {
-  padding-top: 22px;
-  padding-left: 17px;
-  padding-right: 17px;
-  @include flexrow();
-  justify-content: space-between;
-  align-items: center;
-  &__text {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    text-align: center;
-    letter-spacing: 1.25px;
-    text-transform: uppercase;
-    color: #1665d8;
-  }
-  &__name {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    text-align: center;
-    letter-spacing: 1.25px;
-    text-transform: uppercase;
-    color: #425a70;
-  }
-}
-.input-side {
-  @include flexcol();
-  margin-left: 24px;
-  @media (max-width: 1600px) {
-    width: 85%;
-    margin-left: 0px;
-  }
-}
-form {
-  margin-bottom: 24px;
-  width: 910px;
-  height: 454px;
-  background: #ffffff;
-  border: 1px solid rgba(63, 63, 68, 0.005);
-  box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15),
-    0px 1px 0px rgba(63, 63, 68, 0.05);
-  border-radius: 4px;
-  @include flexcol();
-  @media (max-width: 1600px) {
-    width: 100%;
-    margin-top: 32px;
-    height: auto;
-    box-sizing: border-box;
-  }
-}
-.form-title {
-  @include flexrow();
-  align-items: center;
-  height: 71px;
-  width: 100%;
-  border-bottom: 1px solid $borderbottom;
-  &__text {
-    @include title();
-    @media (max-width: 1600px) {
-      text-align: right;
-      margin-top: 10px;
-    }
-  }
-  &__name {
-    @include formName();
-    @media (max-width: 1600px) {
-      text-align: right;
-      margin-top: 10px;
-    }
-  }
-  @media (max-width: 1600px) {
-    @include flexcol();
-    justify-content: flex-start;
-  }
-}
-.input-area {
-  @include flexcol();
-  margin-top: 31px;
-  border-bottom: 1px solid $borderbottom;
-  @media (max-width: 1600px) {
-    align-items: center;
-  }
-}
-.input-fields {
-  @include flexrow();
-  margin-bottom: 24px;
-  input {
-    @include input();
-    border: 1px solid rgba(0, 0, 0, 0.32);
-    @media (max-width: 1600px) {
-      margin-top: 16px;
-      width: 90%;
-    }
-  }
-  @media (max-width: 1600px) {
-    @include flexcol();
-    width: 100%;
-  }
-}
-.subtitle__text {
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  color: rgba(0, 0, 0, 0.6);
-  margin-left: 40px;
-  margin-top: 2px;
-}
-.input-side__button {
-  margin: 24px 24px 0 26px;
-  display: inline-flex;
-  align-items: center;
-  @media (max-width: 1600px) {
-    padding-bottom: 24px;
-  }
-}
-.save-button {
-  height: 40px;
-  width: 152px;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 1.25px;
-  text-transform: uppercase;
-  color: #ffffff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 1px rgba(0, 0, 0, 0.12),
-    0px 1px 1px rgba(0, 0, 0, 0.14);
-  border-radius: 4px;
-  background-color: $buttoncolor;
-}
-.cols-check {
-  @include flexcol();
-  &__name {
-    margin-bottom: 27px;
-    @include formName();
-  }
-  &__option {
-    margin-left: 24px;
-    @include flexrow();
-    margin-bottom: 28px;
-    margin-right: 62px;
-  }
-}
-.checkbox {
-  background: #1665d8;
-  cursor: pointer;
-  height: 18px;
-  width: 18px;
-}
-.checkbox-txt {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.15px;
-  color: rgba(0, 0, 0, 0.6);
-}
-.input-area-boxes {
-  @include formsets();
-  @include flexrow();
-  padding-bottom: 5px;
-  border-bottom: 1px solid $borderbottom;
-  @media (max-width: 1600px) {
-    @include flexcol();
-    height: auto;
-  }
-}
-label {
-  font-size: 16px;
-  letter-spacing: 0.15px;
-  color: rgba(0, 0, 0, 0.6);
-}
-.label-subtext {
-  font-size: 12px;
-  line-height: 14px;
-  color: #66788a;
-  margin-left: 51px;
-  margin-top: -20px;
-  margin-bottom: 24px;
-}
+td {
+  width:100px;
+  height:100px;
+  border:1px solid #555;
+  margin-bottom:10px ;
+  cursor:pointer;}
