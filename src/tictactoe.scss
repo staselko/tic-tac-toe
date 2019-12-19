@@ -1,0 +1,84 @@
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  margin: 0 auto;
+  color: #fff;
+  text-shadow: -1px -1px #333;
+  .game-name {
+    height: 100px;
+    background-color: rgb(60, 205, 224);
+    &__name {
+      font-size: 37px;
+      letter-spacing: 1.5px;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+    }
+  }
+  .game-name_set {
+    @include center();
+  }
+  main {
+    background: url("/src/imgs/179560.jpg");
+    background-size: 100% 100%;
+    @include center();
+    height: 77.55%;
+    flex-direction: column;
+  }
+  .begin-button {
+    border-radius: 6px;
+    font-size: 25px;
+      box-shadow: 0 0 10px rgb(60, 205, 224);
+      border:none;
+      padding: 20px 50px;
+      color:rgb(255, 255, 255);
+      background-color: seagreen;
+  }
+  footer {
+    color: rgb(255, 255, 255);
+    height: 100px;
+    background-color: rgb(60, 205, 224);
+    padding: 45px 50px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    box-sizing: border-box;
+  }
+
+  table {
+    td {
+      width: 100px;
+      height: 100px;
+      font-size: 90px;
+      border: 2px solid rgb(60, 205, 224);
+      cursor: pointer;
+      display: inline-block;
+
+      &.cross:before {
+        content: "x";
+        margin-left: 25px;
+        color: rgb(60, 142, 170);
+      }
+      &.circle:before {
+        margin-left: 25px;
+        content: "o";
+        color: rgb(133, 53, 66);
+      }
+    }
+  }
+  .reset {
+    background: rgb(165, 69, 69);
+    border: none;
+    border-radius: 6px;
+    padding: 20px 60px;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Roboto", Arial, sans-serif;
+    text-transform: uppercase;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

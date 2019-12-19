@@ -1,2 +1,2 @@
-import './style.scss'
-import './jquery.js';
+import './tictactoe.scss'
+import './tictactoe.js';
