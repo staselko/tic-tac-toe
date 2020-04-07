@@ -1,2 +1,2 @@
-import './tictactoe.scss'
-import './tictactoe.js';
+import './ajax-training.scss'
+import './ajax-training.js';
